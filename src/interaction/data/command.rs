@@ -24,6 +24,22 @@ pub struct CommandInteractionData {
 }
 
 impl CommandInteractionData {
+    pub fn new(
+        name: impl Into<String>,
+        kind: CommandOptionKind,
+        value: Option<MultiTypeValue>,
+        options: Option<Vec<CommandInteractionData>>,
+        focused: Option<bool>,
+    ) -> Self {
+        Self {
+            name: name.into(),
+            kind,
+            value,
+            options,
+            focused,
+        }
+    }
+
     /// Returns the name of the command or subcommand.
     pub fn name(&self) -> &str {
         &self.name
