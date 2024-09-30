@@ -16,6 +16,13 @@
 //! - `types`: Defines the types and enums used throughout the library for
 //!   representing commands, options, and responses.
 
+/// The version of the Discord API being used.
+///
+/// This constant is used to construct API endpoint URLs.
+/// If the Discord API version changes, update this constant
+/// accordingly to maintain compatibility.
+pub const DISCORD_API_VERSION: &str = "v10";
+
 /// Module for handling incoming interactions from Discord.
 #[cfg(feature = "interaction")]
 pub mod interaction;
