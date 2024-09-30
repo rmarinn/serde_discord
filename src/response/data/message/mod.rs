@@ -42,6 +42,24 @@ pub struct Message {
     components: Option<Vec<MessageComponent>>,
 }
 
+impl Message {
+    pub fn tts(&self) -> &Option<bool> {
+        &self.tts
+    }
+
+    pub fn content(&self) -> &Option<String> {
+        &self.content
+    }
+
+    pub fn flags(&self) -> &Option<MessageFlags> {
+        &self.flags
+    }
+
+    pub fn components(&self) -> &Option<Vec<MessageComponent>> {
+        &self.components
+    }
+}
+
 pub struct MessageBuilder {
     tts: Option<bool>,
     content: Option<String>,
